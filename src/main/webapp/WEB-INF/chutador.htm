@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>El CHUTADOR!!!!!</title>
+	</head>
+	<body>
+		<p>El Chutador</p>
+		<p>Comienza el <b>PORTERO</b> marcando los puntos de la portería que protegerá</p>
+		<div id="bloquePortero">
+			<table>
+				<tr>
+					<td> <button id="uno-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="dos-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="tres-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="cuatro-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="cinco-1"  onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>	
+				</tr>
+				<tr>
+					<td> <button id="seis-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="siete-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="ocho-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="nueve-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="diez-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+				</tr>
+				<tr>
+					<td> <button id="once-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="doce-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="trece-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="catorce-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="quince-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+				</tr>
+				<tr>
+					<td> <button id="dieciseis-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="diecisiete-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="dieciocho-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="diecinueve-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="veinte-1" onclick="cambiarColor(this)" style="background: black;">aquí</button> </td>
+				</tr>
+			</table>
+		</div>
+		<p> <button id="guardarParadas" name="guardarParadas" onclick="ocultaPorteria()">LISTO!!</button> </p>
+		<div id="bloqueChutador" style="display: none;">
+			<p>Ahora el jugador elije dónde patear</p>
+			<table>
+				<tr>
+					<td> <button id="uno" onclick="marcar(this)" style="background: black;">aquí</button> </td>		
+					<td> <button id="dos" onclick="marcar(this)" style="background: black;">aquí</button> </td>		
+					<td> <button id="tres" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="cuatro" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="cinco" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+				</tr>
+				<tr>
+					<td> <button id="seis" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="siete" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="ocho" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="nueve" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="diez" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+				</tr>
+				<tr>
+					<td> <button id="once" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="doce" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="trece" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="catorce" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+					<td> <button id="quince" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+				</tr>
+				<tr>
+					<td> <button id="dieciseis" onclick="marcar(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="diecisiete" onclick="marcar(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="dieciocho" onclick="marcar(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="diecinueve" onclick="marcar(this)" style="background: black;">aquí</button> </td>
+					<td> <button id="veinte" onclick="marcar(this)" style="background: black;">aquí</button> </td>	
+				</tr>
+			</table>
+			<p> <button id="chutar" onclick="chutar()">CHUTAAAAAR!!</button> </p>		
+		</div>
+		<div id="bloqueResultado" style="display: none;">
+			<p>Resultado: <span id="resultado"></span></p>	
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		var marcado = null;
+		function ocultaPorteria() {
+			var x = document.getElementById("bloquePortero");
+			var boton = document.getElementById("guardarParadas");
+			var contador = 0;
+			if (document.getElementById("uno-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("dos-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("tres-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("cuatro-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("cinco-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("seis-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("siete-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("ocho-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("nueve-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("diez-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("once-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("doce-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("trece-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("catorce-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("quince-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("dieciseis-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("diecisiete-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("dieciocho-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("diecinueve-1").style.background == "red") contador = contador + 1;
+			if (document.getElementById("veinte-1").style.background == "red") contador = contador + 1;
+			//console.log(contador);
+			if (contador == 12) {
+				x.style.display = "none";
+				boton.innerHTML = "Oculto las opciones del PORTERO para que no hagas trampa";
+				boton.disabled = true;
+				document.getElementById("bloqueChutador").style.display = "block";
+			}
+			else {
+				window.alert("Tienes que marcar doce posiciones.");
+			}
+		}
+
+		function cambiarColor(boton) {
+			var color = boton.style.background;
+			if (color == "black") boton.style.background = "red";
+			else 
+			if (color == "red") boton.style.background = "black";
+		}
+		function marcar(boton){
+			boton.style.background = "blue";
+			if (marcado != null) marcado.style.background = "black";
+			marcado = boton;
+		}
+		function chutar(){
+			document.getElementById("chutar").disabled = true;
+			nombreMarcado = marcado.id;
+			nombreMarcado = nombreMarcado + "-1"
+			botonPorteria = document.getElementById(nombreMarcado)
+			//document.getElementById("bloquePortero").style.display = "block";
+			document.getElementById("bloqueResultado").style.display = "block";
+			if (botonPorteria.style.background == "red") {
+				document.getElementById("resultado").innerHTML = "FALLASTE!!!!!!!"
+			}
+			else{
+				document.getElementById("resultado").innerHTML = "GOOOOOOOOLLLL!!!!!!!"	
+			}
+		}
+
+
+	</script>
+
+
+
+
+</html>
