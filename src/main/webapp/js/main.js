@@ -64,7 +64,7 @@ function chutar(){
         document.getElementById("resultado").innerHTML = "FALLASTE!!!!!!!"
     }
     else{
-        document.getElementById("resultado").innerHTML = "GOOOOOOOOLLLL!!!!!!!"
+        document.getElementById("resultado").innerHTML = "GOOOOOOOOOOOL!!!!!!!"
     }
 }
 
