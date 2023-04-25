@@ -1,6 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
-<h1>Enjoy this course!</h1>
+<h1>Hello passionated DevOps students!</h1>
+<h2>Enjoy this course!</h2>
 </body>
 </html>
