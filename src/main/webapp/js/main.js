@@ -82,6 +82,7 @@ function pintaBorde(jugador){
 }
 
 function bloquearSeleccionJugador() {
+    document.getElementById("guardarJugador").disabled = true;
     document.getElementById("bloqueJugador").disabled = true;
     document.getElementById("bloquePortero").style.display = "block";
 }
