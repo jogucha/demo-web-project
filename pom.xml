@@ -4,7 +4,7 @@
   <groupId>org.uax.devops</groupId>
   <artifactId>demo-web-project</artifactId>
   <packaging>war</packaging>
-  <version>1.9-SNAPSHOT</version>
+  <version>1.9</version>
   <name>demo-web-project Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
