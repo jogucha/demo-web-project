@@ -1,5 +1,6 @@
 var marcado = null;
 var jugadorMarcado=null;
+var isJugadorSelected=false;
 var iniWidth="99";
 var iniHeight="171";
 var selectedWidth="132";
@@ -69,6 +70,7 @@ function chutar(){
 }
 
 function pintaBorde(jugador){
+    if (isJugadorSelected) return;
     jugador.style.borderStyle = "solid";
     jugador.width = selectedWidth;
     jugador.height = selectedHeight;
@@ -79,10 +81,27 @@ function pintaBorde(jugador){
         jugadorMarcado.height = iniHeight;
     }
     jugadorMarcado = jugador;
+//    console.log("pasé por aqui: " + jugadorMarcado.id);
 }
 
 function bloquearSeleccionJugador() {
+    if (jugadorMarcado == null) {
+        window.alert("Tienes que seleccionar un jugador.");
+        return;
+    }
     document.getElementById("guardarJugador").disabled = true;
-    document.getElementById("bloqueJugador").disabled = true;
+    var tablaJugadores = document.getElementById("tablaJugadores");
+    var rowImage = tablaJugadores.rows[0];
+    var rowName = tablaJugadores.rows[1];
+    var numCols = rowImage.cells.length;
+    for (var col = 0; col < numCols; col++) {
+//        console.log(jugadorMarcado.id);
+//        console.log(rowImage.cells[col].getElementsByTagName("img")[0].id);
+        if (rowImage.cells[col].getElementsByTagName("img")[0].id == jugadorMarcado.id)
+            continue;
+        rowImage.cells[col].style.display="none";
+        rowName.cells[col].style.display="none";
+    }
+    isJugadorSelected = true;
     document.getElementById("bloquePortero").style.display = "block";
 }
