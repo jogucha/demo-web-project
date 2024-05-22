@@ -20,11 +20,6 @@
       <version>1.18.26</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>com.mysql</groupId>
-      <artifactId>mysql-connector-j</artifactId>
-      <version>8.4.0</version>
-    </dependency>
   </dependencies>
   <build>
     <finalName>demo-web-project</finalName>
